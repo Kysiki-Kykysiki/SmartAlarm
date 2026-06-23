@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "author": "KysЬ",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": 28.2, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 25.6,
+      "left": -330.4,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -176.4,
+      "left": 128.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -62.4,
+      "left": 114.65,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -24.8, "left": 386.22, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -199.2,
+      "left": 222.6,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -163.8,
+      "left": 41.4,
+      "rotate": 90,
+      "attrs": { "color": "white", "xray": "1" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:GND", "uno:GND.2", "black", [ "h-105.6", "v268.8", "h629.7" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-96", "v249.7", "h604.8" ] ],
+    [ "lcd1:SDA", "uno:A4", "magenta", [ "h-86.4", "v221", "h691.2" ] ],
+    [ "lcd1:SCL", "uno:A5", "cyan", [ "h-76.8", "v192.3", "h691.2" ] ],
+    [ "pir1:VCC", "uno:5V", "red", [ "v201.6", "h-230.4" ] ],
+    [ "pir1:OUT", "uno:2", "blue", [ "v9.6", "h-115.34", "v-105.6", "h-48" ] ],
+    [ "pir1:GND", "uno:GND.3", "black", [ "v259.2", "h-240.26" ] ],
+    [ "led1:C", "r1:1", "black", [ "v0" ] ],
+    [ "r1:2", "uno:GND.1", "black", [ "h0" ] ],
+    [ "led1:A", "uno:8", "red", [ "v124.8", "h48" ] ],
+    [ "bz1:1", "uno:GND.1", "black", [ "v105.6", "h-105.6" ] ],
+    [ "bz1:2", "uno:9", "red", [ "v96", "h-67.6" ] ],
+    [ "btn1:1.r", "uno:GND.1", "black", [ "v96.2", "h57.6" ] ],
+    [ "btn1:2.r", "uno:3", "white", [ "v96.2", "h191.8" ] ]
+  ],
+  "dependencies": {}
+}
