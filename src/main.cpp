@@ -25,7 +25,7 @@ void loop() {
     lcd.print("INTRUDER ALERT");
     lcd.setCursor(0,1);
     lcd.print("Status: Alert");
-    digitalWrite(9,HIGH);
+    tone(9,31);
     digitalWrite(3,HIGH);
   }else if (digitalRead(7)==HIGH){
     lcd.setCursor(0,0);
@@ -35,6 +35,7 @@ void loop() {
     digitalWrite(9,HIGH);
     digitalWrite(3,HIGH);
     }else{
+      noTone(9);
     lcd.setCursor(0,0);
     lcd.print("-SmartAlarm-");
   lcd.setCursor(0,1);
