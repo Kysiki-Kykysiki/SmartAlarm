@@ -32,5 +32,5 @@ private:
 
     bool lightOn;
     bool alerting;
-    bool lastCount;
+    int lastCount;
 };
